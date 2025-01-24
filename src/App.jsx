@@ -1,8 +1,9 @@
+import Counter from "./counter/Counter";
+
 function App() {
   return (
     <div>
-      {" "}
-      <h1>testing</h1>
+      <Counter />
     </div>
   );
 }
