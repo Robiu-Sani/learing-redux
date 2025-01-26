@@ -5,12 +5,12 @@ export default function Counter() {
   const dispatch = useDispatch();
   const { count } = useSelector((state) => state.counter); // Updated to match slice name
 
-  const handleIncrement = () => {
-    dispatch(increment());
+  const handleIncrement = (number) => {
+    dispatch(increment(number));
   };
 
-  const handleDecrement = () => {
-    dispatch(decrement());
+  const handleDecrement = (number) => {
+    dispatch(decrement(number));
   };
 
   return (
@@ -21,14 +21,14 @@ export default function Counter() {
         </h1>
         <div className="flex justify-center items-center space-x-10">
           <button
-            onClick={handleDecrement}
+            onClick={() => handleDecrement(5)}
             className="bg-gradient-to-r from-red-400 to-red-600 hover:from-red-500 hover:to-red-700 text-white px-6 py-3 rounded-lg text-xl shadow-xl transform transition-all duration-300 hover:scale-105"
           >
             Decrease
           </button>
           <span className="text-5xl font-semibold text-gray-800">{count}</span>
           <button
-            onClick={handleIncrement}
+            onClick={() => handleIncrement(4)}
             className="bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 text-white px-6 py-3 rounded-lg text-xl shadow-xl transform transition-all duration-300 hover:scale-105"
           >
             Increase
